@@ -26,13 +26,19 @@
     <Compile Update="2.3_SponsorMain.xaml.cs">
       <DependentUpon>2.3_SponsorMain.xaml</DependentUpon>
     </Compile>
+    <Compile Update="2.5_BookPackages.xaml.cs">
+      <DependentUpon>2.5_BookPackages.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="2.6_UpdateBookings.xaml.cs">
+      <DependentUpon>2.6_UpdateBookings.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="2.2_CreateAccount.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BookPackages.xaml">
+    <EmbeddedResource Update="2.5_BookPackages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ManagerMain.xaml">
@@ -41,7 +47,7 @@
     <EmbeddedResource Update="2.3_SponsorMain.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="UpdateBookings.xaml">
+    <EmbeddedResource Update="2.6_UpdateBookings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
