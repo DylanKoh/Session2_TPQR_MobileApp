@@ -23,16 +23,25 @@
     <Compile Update="2.2_CreateAccount.xaml.cs">
       <DependentUpon>2.2_CreateAccount.xaml</DependentUpon>
     </Compile>
+    <Compile Update="2.3_SponsorMain.xaml.cs">
+      <DependentUpon>2.3_SponsorMain.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Update="2.2_CreateAccount.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="BookPackages.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="ManagerMain.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="SponsorMain.xaml">
+    <EmbeddedResource Update="2.3_SponsorMain.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="UpdateBookings.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

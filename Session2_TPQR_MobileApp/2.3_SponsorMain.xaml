@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Title="ASEAN Skills 2020"
+             x:Class="Session2_TPQR_MobileApp.SponsorMain">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Sponsor Main Menu" 
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <StackLayout Padding="5">
+                <Button x:Name="btnBook" Text="Book Sponsorship Package" Clicked="btnBook_Clicked"/>
+                <Button x:Name="btnUpdate" Text="Update Sponsorship Bookings" Clicked="btnUpdate_Clicked"/>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

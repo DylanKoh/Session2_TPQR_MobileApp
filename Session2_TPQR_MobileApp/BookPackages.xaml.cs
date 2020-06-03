@@ -11,10 +11,10 @@ using static Session2_TPQR_MobileApp.GlobalClass;
 namespace Session2_TPQR_MobileApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SponsorMain : ContentPage
+    public partial class BookPackages : ContentPage
     {
         User _user;
-        public SponsorMain(User user)
+        public BookPackages(User user)
         {
             InitializeComponent();
             _user = user;
