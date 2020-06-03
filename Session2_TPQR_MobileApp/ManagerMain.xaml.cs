@@ -16,5 +16,25 @@ namespace Session2_TPQR_MobileApp
         {
             InitializeComponent();
         }
+
+        private void btnViewPackages_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddPackages_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnApproveBookings_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewSummary_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

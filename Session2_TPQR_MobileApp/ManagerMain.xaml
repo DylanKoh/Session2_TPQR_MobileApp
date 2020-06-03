@@ -4,12 +4,19 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             Title="ASEAN Skills 2020"
              x:Class="Session2_TPQR_MobileApp.ManagerMain">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="5">
+            <Label Text="Sponsor Manager Main Menu"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <Grid Padding="5" HeightRequest="200">
+                <Button Text="View Sponsorship Packages" x:Name="btnViewPackages" Clicked="btnViewPackages_Clicked" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Add Sponsorship Packages" x:Name="btnAddPackages" Clicked="btnAddPackages_Clicked" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                <Button Text="Approve Sponsorship Bookings" x:Name="btnApproveBookings" Clicked="btnApproveBookings_Clicked" Grid.Row="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+                <Button Text="View Sponsorship Summary" x:Name="btnViewSummary" Clicked="btnViewSummary_Clicked" Grid.Row="1" Grid.Column="1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
