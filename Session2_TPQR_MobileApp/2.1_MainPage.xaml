@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Session2_TPQR_MobileApp.MainPage"
+             Title="ASEAN Skills 2020 -> 26 – 28 Jul 2020">
+
+    <StackLayout Padding="5">
+        <!-- Place new controls here -->
+        <Label Text="Sponsorship Management Login" 
+           HorizontalOptions="Center"
+               FontSize="Title"/>
+        <StackLayout Padding="5">
+            <Label Text="User ID: "/>
+            <Entry Placeholder="User ID" x:Name="entryUserID"/>
+            <Label Text="Password: "/>
+            <Entry Placeholder="Password" IsPassword="True" x:Name="entryPassword"/>
+            <Button Text="Login" x:Name="btnLogin" Clicked="btnLogin_Clicked" HorizontalOptions="CenterAndExpand"/>
+            <Button Text="Create New Sponsor Account" x:Name="btnCreate" Clicked="btnCreate_Clicked" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+        </StackLayout>
+        
+    </StackLayout>
+
+</ContentPage>
