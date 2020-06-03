@@ -138,5 +138,51 @@ namespace Session2_TPQR_MobileApp
             }
             FilterList();
         }
+
+        private async void btnBook_Clicked(object sender, EventArgs e)
+        {
+            if (lvPackages.SelectedItem == null)
+            {
+                await DisplayAlert("Book", "Please select a sponsorship package to book!", "Ok");
+            }
+            else if (entryDesiredQuantity.Text == null)
+            {
+                await DisplayAlert("Book", "Please input desired quantity!", "Ok");
+            }
+            else if (entryDesiredQuantity.Text == "" || entryDesiredQuantity.Text == "0")
+            {
+                await DisplayAlert("Book", "Please input desired quantity!", "Ok");
+            }
+            else
+            {
+                var toBook = (CustomView)lvPackages.SelectedItem;
+                var getQuantity = Int32.Parse(entryDesiredQuantity.Text);
+                if (toBook.AvailableQuantity - getQuantity < 0)
+                {
+                    await DisplayAlert("Book", "Unable to book more than current available quantity!", "Ok");
+                }
+                else
+                {
+                    using (var webClient = new WebClient())
+                    {
+                        webClient.Headers.Add("Content-Type", "application/json");
+                        var newBooking = new Booking() { packageIdFK = toBook.PackageID, userIdFK = _user.userId, quantityBooked = getQuantity, status = "Pending" };
+                        var JsonData = JsonConvert.SerializeObject(newBooking);
+                        var response = await webClient.UploadDataTaskAsync("http://10.0.2.2:60022/Bookings/Create", "POST", Encoding.UTF8.GetBytes(JsonData));
+                        var responseString = Encoding.Default.GetString(response);
+                        if (responseString == "\"Unable to book package! Please try again later!\"")
+                        {
+                            await DisplayAlert("Book", "Unable to book package! Please try again later!", "Ok");
+                        }
+                        else
+                        {
+                            await DisplayAlert("Book", "Booking successful!", "Ok");
+                            entryDesiredQuantity.Text = "";
+                        }
+                    }
+                }
+            }
+            
+        }
     }
 }

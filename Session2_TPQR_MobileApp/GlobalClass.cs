@@ -29,6 +29,15 @@ namespace Session2_TPQR_MobileApp
             public string Benefits { get; set; }
         }
 
+        public class Booking
+        {
+            public int bookingId { get; set; }
+            public string userIdFK { get; set; }
+            public int packageIdFK { get; set; }
+            public int quantityBooked { get; set; }
+            public string status { get; set; }
+        }
+
     }
 }
 

@@ -10,7 +10,7 @@
             <Label Text="Book Sponsorship Packages"
                 HorizontalOptions="CenterAndExpand"
                    FontSize="Large"/>
-            <Grid Padding="5" HeightRequest="250">
+            <Grid Padding="5" HeightRequest="300">
                 <Label Text="Filter By Tier: "/>
                 <Picker Title="Tier" x:Name="pTier" SelectedIndexChanged="pTier_SelectedIndexChanged" Grid.Column="1" FontSize="Small"/>
                 <Label Text="Filter By Budget: " Grid.Row="1"/>
@@ -44,6 +44,11 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Grid HeightRequest="100">
+                <Label Text="Desired Quantity:"/>
+                <Entry Keyboard="Numeric" x:Name="entryDesiredQuantity" Placeholder="Quantity" Grid.Column="1"/>
+                <Button Text="Book" x:Name="btnBook" Clicked="btnBook_Clicked" Grid.Column="2"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
