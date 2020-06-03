@@ -6,10 +6,44 @@
              mc:Ignorable="d"
              x:Class="Session2_TPQR_MobileApp.BookPackages">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="5">
+            <Label Text="Book Sponsorship Packages"
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"/>
+            <Grid Padding="5" HeightRequest="250">
+                <Label Text="Filter By Tier: "/>
+                <Picker Title="Tier" x:Name="pTier" SelectedIndexChanged="pTier_SelectedIndexChanged" Grid.Column="1" FontSize="Small"/>
+                <Label Text="Filter By Budget: " Grid.Row="1"/>
+                <Entry x:Name="entryBudget" Keyboard="Numeric" Placeholder="Max Budget" Completed="entryBudget_Completed" Grid.Row="1" Grid.Column="1" FontSize="Small"/>
+                <Label Text="Filter By Benefits: " Grid.Column="2" Grid.ColumnSpan="2"/>
+                <CheckBox x:Name="cbOnline" CheckedChanged="cbOnline_CheckedChanged" Grid.Row="1" Grid.Column="2"/>
+                <Label Text="Online" Grid.Row="1" Grid.Column="3"/>
+                <CheckBox x:Name="cbFlyer" CheckedChanged="cbFlyer_CheckedChanged" Grid.Row="2" Grid.Column="2"/>
+                <Label Text="Flyer" Grid.Row="2" Grid.Column="3"/>
+                <CheckBox x:Name="cbBanner" CheckedChanged="cbBanner_CheckedChanged" Grid.Row="3" Grid.Column="2"/>
+                <Label Text="Banner" Grid.Row="3" Grid.Column="3"/>
+            </Grid>
+            <ListView HasUnevenRows="True" x:Name="lvPackages">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Label Text="{Binding PackageID}" IsVisible="False"/>
+                                <Label Text="Tier:"/>
+                                <Label Text="{Binding PackageTier}" Grid.Column="1"/>
+                                <Label Text="Name:" Grid.Row="1"/>
+                                <Label Text="{Binding PackageValue}" Grid.Column="1" Grid.Row="2"/>
+                                <Label Text="Name:" Grid.Row="2"/>
+                                <Label Text="{Binding PackageName}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="Available Quantity:" Grid.Row="3"/>
+                                <Label Text="{Binding AvailableQuantity}" Grid.Row="3" Grid.Column="1"/>
+                                <Label Text="Benefits:" Grid.Row="4"/>
+                                <Label Text="{Binding Benefits}" Grid.Row="4" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

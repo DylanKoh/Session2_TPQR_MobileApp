@@ -18,5 +18,18 @@ namespace Session2_TPQR_MobileApp
             public int userTypeId { get; set; }
             public string userTypeName { get; set; }
         }
+
+        public class CustomView
+        {
+            public int PackageID { get; set; }
+            public string PackageName { get; set; }
+            public int AvailableQuantity { get; set; }
+            public string PackageTier { get; set; }
+            public int PackageValue { get; set; }
+            public string Benefits { get; set; }
+        }
+
     }
 }
+
+
