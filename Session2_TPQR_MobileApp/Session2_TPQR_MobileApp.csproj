@@ -20,10 +20,13 @@
     <Compile Update="2.1_MainPage.xaml.cs">
       <DependentUpon>2.1_MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="2.2_CreateAccount.xaml.cs">
+      <DependentUpon>2.2_CreateAccount.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CreateAccount.xaml">
+    <EmbeddedResource Update="2.2_CreateAccount.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ManagerMain.xaml">
