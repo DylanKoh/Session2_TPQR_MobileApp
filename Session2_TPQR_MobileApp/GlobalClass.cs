@@ -38,6 +38,18 @@ namespace Session2_TPQR_MobileApp
             public string status { get; set; }
         }
 
+        public class GetCustomBookings
+        {
+
+            public int BookingID { get; set; }
+            public string PackageTier { get; set; }
+            public string PackageName { get; set; }
+            public int PackageValue { get; set; }
+            public int QuantityBooked { get; set; }
+            public int SubTotal { get; set; }
+
+        }
+
     }
 }
 

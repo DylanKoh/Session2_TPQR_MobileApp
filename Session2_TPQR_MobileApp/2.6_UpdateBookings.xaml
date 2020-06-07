@@ -4,12 +4,42 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Session2_TPQR_MobileApp.UpdateBookings">
+             x:Class="Session2_TPQR_MobileApp.UpdateBookings"
+             Title="ASEAN Skills 2020">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="5">
+            <Label Text="Update Sponsorship Bookings"
+                HorizontalOptions="CenterAndExpand"
+                   FontSize="Large"/>
+            <ListView HasUnevenRows="True" x:Name="lvUpdate">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Label Text="{Binding BookingID}" IsVisible="false"/>
+                                <Label Text="Tier:"/>
+                                <Label Text="{Binding PackageTier}" Grid.Column="1"/>
+                                <Label Text="Name:" Grid.Row="1"/>
+                                <Label Text="{Binding PackageName}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="Individual Value ($):" Grid.Row="2"/>
+                                <Label Text="{Binding PackageValue}" Grid.Row="2" Grid.Column="1"/>
+                                <Label Text="Quantity Booked:" Grid.Row="3"/>
+                                <Label Text="{Binding QuantityBooked}" Grid.Row="3" Grid.Column="1"/>
+                                <Label Text="Sub-Total Value ($):" Grid.Row="4"/>
+                                <Label Text="{Binding SubTotal}" Grid.Row="4" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Padding="5">
+                <Label Text="Total ($):" VerticalOptions="CenterAndExpand"/>
+                <Label Text="0" x:Name="lblTotal" Grid.ColumnSpan="2" Grid.Column="1" VerticalOptions="CenterAndExpand"/>
+                <Label Text="New Quantity:" Grid.Row="1" VerticalOptions="CenterAndExpand"/>
+                <Entry Keyboard="Numeric" x:Name="entryQuantity" Grid.Column="1" Grid.Row="1"/>
+                <Button Text="Update Quantity" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="btnUpdate" Clicked="btnUpdate_Clicked" Grid.Column="2" Grid.Row="1" HeightRequest="100"/>
+                <Button Text="Delete" FontSize="Small" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="btnDelete" Clicked="btnDelete_Clicked" Grid.Row="2" Grid.ColumnSpan="3"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
