@@ -45,7 +45,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Grid HeightRequest="100">
-                <Label Text="Desired Quantity:"/>
+                <Label Text="Desired Quantity:" VerticalOptions="CenterAndExpand"/>
                 <Entry Keyboard="Numeric" x:Name="entryDesiredQuantity" Placeholder="Quantity" Grid.Column="1"/>
                 <Button Text="Book" x:Name="btnBook" Clicked="btnBook_Clicked" Grid.Column="2"/>
             </Grid>

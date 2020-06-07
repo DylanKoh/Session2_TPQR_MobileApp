@@ -27,13 +27,7 @@ namespace Session2_TPQR_MobileApp
         protected async override void OnAppearing()
         {
             base.OnAppearing();
-            using (var webClient = new WebClient())
-            {
-                var response = await webClient.UploadDataTaskAsync($"http://10.0.2.2:60022/Bookings/GetSpecificBookings?userID={_user.userId}", "POST", Encoding.UTF8.GetBytes(""));
-                _originalSource = JsonConvert.DeserializeObject<List<GetCustomBookings>>(Encoding.Default.GetString(response));
-                lvUpdate.ItemsSource = _originalSource;
-            }
-
+            await UpdateData();
             var total = 0;
             foreach (var item in _originalSource)
             {
@@ -41,14 +35,54 @@ namespace Session2_TPQR_MobileApp
             }
             lblTotal.Text = total.ToString();
         }
-        private void btnUpdate_Clicked(object sender, EventArgs e)
-        {
 
+        private async Task UpdateData()
+        {
+            using (var webClient = new WebClient())
+            {
+                var response = await webClient.UploadDataTaskAsync($"http://10.0.2.2:60022/Bookings/GetSpecificBookings?userID={_user.userId}", "POST", Encoding.UTF8.GetBytes(""));
+                _originalSource = JsonConvert.DeserializeObject<List<GetCustomBookings>>(Encoding.Default.GetString(response));
+                lvUpdate.ItemsSource = _originalSource;
+            }
+        }
+        private async void btnUpdate_Clicked(object sender, EventArgs e)
+        {
+            if (lvUpdate.SelectedItem == null)
+            {
+                await DisplayAlert("Update", "Please select a booking to update!", "Ok");
+            }
         }
 
-        private void btnDelete_Clicked(object sender, EventArgs e)
+        private async void btnDelete_Clicked(object sender, EventArgs e)
         {
-
+            if (lvUpdate.SelectedItem == null)
+            {
+                await DisplayAlert("Delete", "Please select a booking to update!", "Ok");
+            }
+            else
+            {
+                var userResponse = await DisplayAlert("Delete", "Please select a booking to update!", "Yes", "Cancel");
+                if (userResponse)
+                {
+                    var toDelete = (GetCustomBookings)lvUpdate.SelectedItem;
+                    using (var webClient = new WebClient())
+                    {
+                        var response = await webClient.UploadDataTaskAsync($"http://10.0.2.2:60022/Bookings/Delete/{toDelete.BookingID}", "POST", Encoding.UTF8.GetBytes(""));
+                        var responseString = Encoding.Default.GetString(response);
+                        if (responseString != "\"Booking removed successfully!\"")
+                        {
+                            await DisplayAlert("Delete", "Unable to delete booking! PLease contact administrator!", "Ok");
+                        }
+                        else
+                        {
+                            await DisplayAlert("Delete", "Booking removed successfully!", "Ok");
+                            
+                        }
+                    }
+                    await UpdateData();
+                }
+                
+            }
         }
     }
 }
