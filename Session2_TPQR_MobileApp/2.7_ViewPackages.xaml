@@ -4,24 +4,16 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Session2_TPQR_MobileApp.BookPackages">
+             x:Class="Session2_TPQR_MobileApp.ViewPackages"
+             Title="ASEAN Skills 2020">
     <ContentPage.Content>
         <StackLayout Padding="5">
-            <Label Text="Book Sponsorship Packages"
-                HorizontalOptions="CenterAndExpand"
+            <Label Text="View Sponsorship Packages"
+                HorizontalOptions="CenterAndExpand" 
                    FontSize="Large"/>
-            <Grid Padding="5" HeightRequest="300">
-                <Label Text="Filter By Tier: "/>
-                <Picker Title="Tier" x:Name="pTier" SelectedIndexChanged="pTier_SelectedIndexChanged" Grid.Column="1" FontSize="Small"/>
-                <Label Text="Filter By Budget: " Grid.Row="1"/>
-                <Entry x:Name="entryBudget" Keyboard="Numeric" Placeholder="Max Budget" Completed="entryBudget_Completed" Grid.Row="1" Grid.Column="1" FontSize="Small"/>
-                <Label Text="Filter By Benefits: " Grid.Column="2" Grid.ColumnSpan="2"/>
-                <CheckBox x:Name="cbOnline" CheckedChanged="cbOnline_CheckedChanged" Grid.Row="1" Grid.Column="2"/>
-                <Label Text="Online" Grid.Row="1" Grid.Column="3"/>
-                <CheckBox x:Name="cbFlyer" CheckedChanged="cbFlyer_CheckedChanged" Grid.Row="2" Grid.Column="2"/>
-                <Label Text="Flyer" Grid.Row="2" Grid.Column="3"/>
-                <CheckBox x:Name="cbBanner" CheckedChanged="cbBanner_CheckedChanged" Grid.Row="3" Grid.Column="2"/>
-                <Label Text="Banner" Grid.Row="3" Grid.Column="3"/>
+            <Grid Padding="5">
+                <Label Text="Sort By:" VerticalOptions="CenterAndExpand"/>
+                <Picker x:Name="pSort" SelectedIndexChanged="pSort_SelectedIndexChanged" Title="Sort" Grid.Column="1" FontSize="Small" HeightRequest="50"/>
             </Grid>
             <ListView HasUnevenRows="True" x:Name="lvPackages">
                 <ListView.ItemTemplate>
@@ -44,11 +36,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Grid HeightRequest="100">
-                <Label Text="Desired Quantity:" VerticalOptions="CenterAndExpand"/>
-                <Entry Keyboard="Numeric" x:Name="entryDesiredQuantity" Placeholder="Quantity" Grid.Column="1"/>
-                <Button Text="Book" x:Name="btnBook" Clicked="btnBook_Clicked" Grid.Column="2"/>
-            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
