@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Session2_TPQR_MobileApp.AddPackages"
+             Title="ASEAN Skills 2020">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Add Sponsorship Packages"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <Label Text="Tier: "/>
+            <Picker Title="Tier" x:Name="pTier" />
+            <Label Text="Package Name: "/>
+            <Entry Placeholder="Package name" x:Name="entryPackageName"/>
+            <Label Text="Value: "/>
+            <Entry Keyboard="Numeric" Placeholder="Value" x:Name="entryValue"/>
+            <Label Text="Available Quantity: "/>
+            <Entry Keyboard="Numeric" Placeholder="Quantity" x:Name="entryQuantity"/>
+            <Grid Padding="5">
+                <Label Text="Benefit: "/>
+                <CheckBox x:Name="cbOnline" CheckedChanged="cbOnline_CheckedChanged" Grid.Column="1"/>
+                <Label Text="Online" Grid.Column="2"/>
+                <CheckBox x:Name="cbFlyer" CheckedChanged="cbFlyer_CheckedChanged" Grid.Column="3"/>
+                <Label Text="Flyer" Grid.Column="4"/>
+                <CheckBox x:Name="cbBanner" CheckedChanged="cbBanner_CheckedChanged" Grid.Column="5"/>
+                <Label Text="Banner" Grid.Column="6"/>
+            </Grid>
+            <Grid Padding="5">
+                <Button x:Name="btnClear" Text="Clear Form" Clicked="btnClear_Clicked"/>
+                <Button x:Name="btnAddPackage" Text="Add Package" Clicked="btnAddPackage_Clicked" Grid.Column="1"/>
+            </Grid>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -49,6 +49,22 @@ namespace Session2_TPQR_MobileApp
             public int SubTotal { get; set; }
 
         }
+        public class Benefit
+        {
+            public int benefitId { get; set; }
+            public int packageIdFK { get; set; }
+            public string benefitName { get; set; }
+
+        }
+        public class Package
+        {
+            public int packageId { get; set; }
+            public string packageTier { get; set; }
+            public string packageName { get; set; }
+            public long packageValue { get; set; }
+            public int packageQuantity { get; set; }
+
+        }
 
     }
 }

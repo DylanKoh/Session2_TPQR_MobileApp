@@ -38,6 +38,9 @@
     <Compile Update="2.7_ViewPackages.xaml.cs">
       <DependentUpon>2.7_ViewPackages.xaml</DependentUpon>
     </Compile>
+    <Compile Update="2.8_AddPackages.xaml.cs">
+      <DependentUpon>2.8_AddPackages.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -47,7 +50,7 @@
     <EmbeddedResource Update="2.5_BookPackages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="AddPackages.xaml">
+    <EmbeddedResource Update="2.8_AddPackages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ApproveBookings.xaml">
