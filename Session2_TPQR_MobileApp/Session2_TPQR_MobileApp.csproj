@@ -44,6 +44,9 @@
     <Compile Update="2.9_ApproveBookings.xaml.cs">
       <DependentUpon>2.9_ApproveBookings.xaml</DependentUpon>
     </Compile>
+    <Compile Update="2.10_ViewSummary.xaml.cs">
+      <DependentUpon>2.10_ViewSummary.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -71,7 +74,7 @@
     <EmbeddedResource Update="2.7_ViewPackages.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ViewSummary.xaml">
+    <EmbeddedResource Update="2.10_ViewSummary.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
