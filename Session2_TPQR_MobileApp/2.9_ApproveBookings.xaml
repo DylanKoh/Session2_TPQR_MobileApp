@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Session2_TPQR_MobileApp.ApproveBookings"
+             Title="ASEAN Skills 2020">
+    <ContentPage.Content>
+        <StackLayout Padding="5">
+            <Label Text="Approve Sponsorship Bookings"
+                HorizontalOptions="CenterAndExpand" 
+                   FontSize="Large"/>
+            <ListView x:Name="lvBookings" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid Padding="5">
+                                <Label Text="{Binding BookingID}" IsVisible="False"/>
+                                <Label Text="Company Name:"/>
+                                <Label Text="{Binding CompanyName}" Grid.Column="1"/>
+                                <Label Text="Package Name:" Grid.Row="1"/>
+                                <Label Text="{Binding PackageName}" Grid.Row="1" Grid.Column="1"/>
+                                <Label Text="Status:" Grid.Row="2"/>
+                                <Label Text="{Binding Status}" Grid.Row="2" Grid.Column="1"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid Padding="5">
+                <Button Text="Approve" x:Name="btnApprove" Clicked="btnApprove_Clicked"/>
+                <Button Text="Reject" x:Name="btnReject" Clicked="btnReject_Clicked" Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

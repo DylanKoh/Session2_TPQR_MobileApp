@@ -66,6 +66,17 @@ namespace Session2_TPQR_MobileApp
 
         }
 
+        public class BookingManagerView
+        {
+
+            public int BookingID { get; set; }
+            public string CompanyName { get; set; }
+            public string PackageName { get; set; }
+            public string Status { get; set; }
+
+
+        }
+
     }
 }
 
